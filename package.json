@@ -39,5 +39,9 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pandreyn/agrofair-angular.git"
   }
 }

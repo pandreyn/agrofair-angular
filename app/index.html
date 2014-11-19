@@ -28,10 +28,10 @@
     <div id="page" class="container-fluid pad" ng-class="{'c-overlay-open': menuOpen}">
         <div class="menu-links">
         <a class="hand-pointer pad" href="/" type="button">
-            <img id="trigger-overlay" src="/images/logo.png" width="110px" alt="AgroFair">
+            <img class="trigger-overlay" src="/images/logo.png" width="110px" alt="AgroFair">
         </a>
         <a id="menu-logo" class="hand-pointer pull-right pad" ng-click="menuOpen=true" type="button">
-            <img id="trigger-overlay" width="40px" src="/images/menu.png"  alt="Menu">
+            <img class="trigger-overlay" width="40px" src="/images/menu.png"  alt="Menu">
         </a>
         </div>
         <div ui-view ng-view=""></div>
@@ -76,17 +76,18 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
 
+    <script src="/scripts/directives/partitioner.js"></script>
+
     <script src="/scripts/app.js"></script>
+
+    <script src="/scripts/directives/globalmenu.js"></script>
+    <script src="/scripts/services/activitydatasvc.js"></script>
+    <script src="/scripts/services/datadatasvc.js"></script>
+
     <script src="/scripts/controllers/main.js"></script>
     <script src="/scripts/controllers/about.js"></script>
     <script src="/scripts/controllers/activities.js"></script>
     <script src="/scripts/controllers/activity.js"></script>
-
-    <script src="/scripts/directives/globalmenu.js"></script>
-    <script src="/scripts/services/activitydatasvc.js"></script>
-
-    <script src="/scripts/services/dataservice.js"></script>
-    <script src="/scripts/services/codeservice.js"></script>
     <!-- endbuild -->
 </body>
 

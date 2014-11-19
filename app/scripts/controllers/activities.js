@@ -8,6 +8,6 @@
  * Controller of the agroFairApp
  */
 angular.module('agroFairApp')
-  .controller('ActivitiesCtrl', function ($scope) {
-
+  .controller('ActivitiesCtrl', function ($scope, dataDataSvc) {
+    $scope.menuList = dataDataSvc.getData('menu');
   });

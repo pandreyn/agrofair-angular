@@ -7,33 +7,32 @@
  * # globalMenu
  */
 angular.module('agroFairApp')
-    .directive('globalMenu', function () {
-        return {
-            templateUrl: '/views/directives/global-menu.html',
-            restrict: 'E',
-            replace: true,
-            scope: {
-                open: '='
-            },
+  .directive('globalMenu', function () {
+    return {
+      templateUrl: '/views/directives/global-menu.html',
+      restrict: 'E',
+      replace: true,
+      scope: {
+        open: '='
+      },
 
-            controller: 'GlobalMenuCtrl'
-        };
-    });
-
+      controller: 'GlobalMenuCtrl'
+    };
+  });
 
 
 angular.module('agroFairApp')
   .controller('GlobalMenuCtrl', function ($scope) {
-      $scope.openMenu = function () {
-                    $scope.open = true;
-                };
+    $scope.openMenu = function () {
+      $scope.open = true;
+    };
 
-                $scope.closeMenu = function () {
-                    $scope.open = false;
-                };
+    $scope.closeMenu = function () {
+      $scope.open = false;
+    };
 
-                $scope.isMenuOpen = function () {
-                    return $scope.open;
-                };
+    $scope.isMenuOpen = function () {
+      return $scope.open;
+    };
 
   });

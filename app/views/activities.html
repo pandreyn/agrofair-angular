@@ -1,113 +1,36 @@
 <div class="container pad">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="title">Направления деятельности</h1>
-        </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="title">Направления деятельности</h1>
     </div>
+  </div>
 
+  <div ng-repeat="group in menuList.content  | orderBy:'groupid' ">
     <div class="row">
-        <div class="col-md-12">
-            <p class="nav-header">Овощи и фрукты</p>
-        </div>
+      <div class="col-md-12">
+        <p class="nav-header">{{group.groupname}}</p>
+      </div>
     </div>
     <div class="container">
-        <div class="row pad-row">
-            <div class="col-md-5 margin">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="title-link"><a href="/cabbage.html">Капуста</a></h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="tech-desc">Люблю тушеную.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5 margin">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="title-link"><a href="/carrot.html" class="no-deco ">Морковка</a></h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="tech-desc">Лучше брать не крупную.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="row pad-row" ng-repeat="row in group.pages  | orderBy:'id' | agrofair.partition:2 ">
 
+        <div class="col-md-5 margin" ng-repeat="item in row">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="title-link"><a href="/{{item.page}}.html">{{item.name}}</a></h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="tech-desc">{{item.brief}}</p>
+            </div>
+          </div>
         </div>
 
-
-        <div class="row pad-row">
-            <div class="col-md-5 margin">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="title-link"><a href="/beet.html">Свеколка</a></h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="tech-desc">Делаем винегрет.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5 margin">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="title-link"><a href="/turnip.html">Репка</a></h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="tech-desc">Нужно понять зачем она нужна.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+      </div>
     </div>
 
-
-
-
-    <div class="row">
-        <div class="col-md-12">
-            <p class="nav-header">Ботва разная</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row pad-row">
-            <div class="col-md-5 margin">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="title-link"><a href="/dill.html">Укропчик</a></h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="tech-desc">Он всем нужен.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5 margin">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="title-link"><a href="/potato.html">Картошка</a></h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="tech-desc">Зачем куда и почему.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
+  </div>
 </div>
-
 
 <div ng-include src="'/views/includes/footer.html'"></div>

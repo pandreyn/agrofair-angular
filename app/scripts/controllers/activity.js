@@ -9,7 +9,5 @@
  */
 angular.module('agroFairApp')
   .controller('ActivityCtrl', function ($scope, activityDataSvc, $routeParams, $log) {
-        $log.debug('ActivityCtrl: $routeParams.techName:' + $routeParams.techName);
-        $scope.activities = activityDataSvc.getActivities($routeParams.techName);
-
+    $scope.activity = activityDataSvc.getActivity($routeParams.techName);
   });

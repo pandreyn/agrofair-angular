@@ -12,7 +12,6 @@ module.exports = function (grunt) {
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-sftp-deploy');
   grunt.loadNpmTasks('grunt-ftp-deploy');
 
   // Time how long tasks take. Can help when optimizing build times
@@ -401,19 +400,6 @@ module.exports = function (grunt) {
           port: 21,
           authKey: 'key1'
         },
-        src: 'dist',
-        dest: 'webspace/httpdocs/test.agrofair.ru/'
-      }
-    },
-
-    'sftp-deploy': {
-      build: {
-        auth: {
-          host: '109.120.162.1',
-          port: 21,
-          authKey: 'key1'
-        },
-        cache: 'sftpCache.json',
         src: 'dist',
         dest: 'webspace/httpdocs/test.agrofair.ru/'
       }

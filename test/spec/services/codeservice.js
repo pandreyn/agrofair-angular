@@ -3,7 +3,7 @@
 describe('Service: codeService', function () {
 
   // load the service's module
-  beforeEach(module('jbAngularApp'));
+  beforeEach(module('agroFairApp'));
 
   // instantiate service
   var codeService;

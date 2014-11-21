@@ -273,7 +273,10 @@ module.exports = function (grunt) {
     // },
 
     imagemin: {
-      dist: {
+      dist: {                          // Target
+        options: {                       // Target options
+          optimizationLevel: 0
+        },
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
@@ -380,9 +383,9 @@ module.exports = function (grunt) {
         'compass'
       ],
       dist: [
-        'compass:dist',
-        'imagemin',
-        'svgmin'
+        'compass:dist'//,
+        //'imagemin',
+        //'svgmin'
       ]
     },
 
@@ -432,7 +435,7 @@ module.exports = function (grunt) {
     'clean:server',
     'concurrent:test',
     'autoprefixer',
-    'connect:test',
+    'connect:test'
     //'karma'
   ]);
 
@@ -441,6 +444,8 @@ module.exports = function (grunt) {
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
+    'imagemin',
+    'svgmin',
     'autoprefixer',
     'concat',
     'ngmin',
